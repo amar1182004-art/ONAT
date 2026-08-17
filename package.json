@@ -1,0 +1,6 @@
+{
+  "name": "nivaro", "private": true, "packageManager": "npm@10.9.0",
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {"dev":"concurrently -n api,store,admin \"npm run dev -w @nivaro/api\" \"npm run dev -w @nivaro/storefront\" \"npm run dev -w @nivaro/admin\"","build":"npm run build --workspaces --if-present","typecheck":"npm run typecheck --workspaces --if-present","test":"npm run test --workspaces --if-present","lint":"npm run lint --workspaces --if-present","db:generate":"npm run prisma:generate -w @nivaro/api","db:migrate":"npm run prisma:migrate -w @nivaro/api","db:seed":"npm run prisma:seed -w @nivaro/api"},
+  "devDependencies":{"concurrently":"^9.1.2","typescript":"^5.7.3"}
+}
